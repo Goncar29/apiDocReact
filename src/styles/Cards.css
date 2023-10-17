@@ -1,0 +1,22 @@
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: darkcyan;
+}
+
+.cards {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    gap: 80px;
+    border-radius: 10%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 14, 61);
+}
