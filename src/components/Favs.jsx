@@ -1,18 +1,19 @@
 import { useContexto } from "./contexto";
 import { Cards } from "./Cards";
 
-export function Favs () {
+export function Favs() {
     const { estado } = useContexto()
 
     return (
-        <section style={{backgroundColor: estado.tema}}>
+        <section className="Section--Favs">
             <h1>Favoritos</h1>
-            {estado.favs.map((card) => 
-                <div key={card.id}>
-                    <Cards card={card} />
-                </div>
-                
-            )}
+            <aside className="Aside--Favs">
+                {estado.favs.map((card) =>
+                    <div key={card.id}>
+                        <Cards card={card} />
+                    </div>
+                )}
+            </aside>
         </section>
     )
 }

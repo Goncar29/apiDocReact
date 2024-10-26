@@ -3,28 +3,26 @@ import { Link } from "react-router-dom";
 import { useContexto } from './contexto';
 
 
-export function Cards({ card }){
+export function Cards({ card }) {
     const { estado, dispatch } = useContexto()
 
-    const addFavs = () => { dispatch({type: 'FAVS', payload: card  })}
-    const removeFavs = () => { null }
+    const addFavs = () => { dispatch({ type: 'FAVS', payload: card }) }
+    const removeFavs = () => { dispatch({ type: 'FAVS', payload: card }) }
 
     return (
         <>
-            <section style={{backgroundColor: estado.tema}}>
-                    <div className='cards' key={card.id}>
-                        <strong>
-                            <Link to={`/dentista/${card.id}`}>
-                                {card.name}
-                            </Link>
-                        </strong>
-                        <strong>{card.username}</strong>
-                        {estado.favs
-                            ? <button onClick={addFavs}>Agregar a favoritos </button>
-                            : <button onClick={removeFavs}>Remover de favoritos </button>}
-                        
-                    </div> 
-            </section>
+            <div className='cards' key={card.id} style={{ backgroundColor: estado.tema }}>
+                <strong>
+                    <Link to={`/dentista/${card.id}`}>
+                        {card.name}
+                    </Link>
+                </strong>
+                <strong>{card.username}</strong>
+                {estado.favs
+                    ? <button onClick={addFavs}>Agregar a favoritos </button>
+                    : <button onClick={removeFavs}>Remover de favoritos </button>}
+
+            </div>
         </>
     )
 }

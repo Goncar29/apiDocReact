@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import '../styles/Contact.css'
 import { useContexto } from './contexto';
 
-export function Contact(){
+export function Contact() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState(null)
@@ -15,13 +15,13 @@ export function Contact(){
     const getNombre = (name) => {
         if (name) {
             setNombre(name)
-        } 
+        }
         console.log(name);
     }
     const getMail = (email) => {
         if (email) {
             setMail(email)
-        } 
+        }
         console.log(email);
     }
 
@@ -39,17 +39,17 @@ export function Contact(){
         getNombre(name)
         getMail(email)
     }
-    
+
     useEffect(() => {
         if (inputRefName.current) {
             inputRefName.current = name === ''
             return
         }
-        if (name.length < 5){
+        if (name.length < 5) {
             console.log(name);
             setError('Por favor verifique su información nuevamente')
             return
-        } else { 
+        } else {
             setError(null)
         }
         console.log(name);
@@ -58,34 +58,38 @@ export function Contact(){
 
 
     return (
-        <section style={{backgroundColor: estado.tema}}>
+        <section className="Section--Contact" style={{ backgroundColor: estado.tema }}>
+
             <h1>Contacto</h1>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    ref={inputRefName}
-                    name='name'
-                    type="text"
-                    placeholder='Nombre'
-                    onChange={handleChangeName}
-                    value={name}
-                >
-                </input>
+            <aside className='Asside-Footer'>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        ref={inputRefName}
+                        name='name'
+                        type="text"
+                        placeholder='Nombre'
+                        onChange={handleChangeName}
+                        value={name}
+                    >
+                    </input>
 
-                <input 
-                    type="text"
-                    name='email'
-                    placeholder='Email'
-                    onChange={handleChangeEmail}
-                    value={email}
-                >
-                </input>
-                
-                <button type="submit">Enviar</button>
+                    <input
+                        type="text"
+                        name='email'
+                        placeholder='Email'
+                        onChange={handleChangeEmail}
+                        value={email}
+                    >
+                    </input>
 
-            </form>
-            {(handleSubmit && nombre.length >= 5) 
-                ? <p>Gracias {nombre}, te contactaremos cuando antes vía mail</p>
-                : <p style={{ color: 'red'}}>{error}</p>}
+                    <button type="submit">Enviar</button>
+
+                </form>
+                {(handleSubmit && nombre.length >= 5)
+                    ? <p>Gracias {nombre}, te contactaremos cuando antes vía mail</p>
+                    : <p style={{ color: 'red' }}>{error}</p>}
+            </aside>
+
         </section>
     )
 }

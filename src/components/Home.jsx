@@ -1,17 +1,16 @@
 import { Cards } from './Cards'
 import { useContexto } from './contexto';
 
-export function Home(){
+export function Home() {
     const { estado } = useContexto()
 
     return (
         <>
-            {estado.data.map((card) => 
-                <div key={card.id}>
-                    <Cards card={card} />
-                </div>
-                
-            )}
+            <section className='Section--Home'>
+                {estado.data.map((card) =>
+                    <Cards card={card} key={card.id} />
+                )}
+            </section>
         </>
     )
 }
