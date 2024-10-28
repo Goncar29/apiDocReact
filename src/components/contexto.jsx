@@ -24,18 +24,23 @@ function reducer(state, action) {
     }
     if (action.type === 'FAVS') {
         return {
-            ...state, favs: [...state.favs, action.payload] 
+            ...state, favs: [...state.favs, action.payload]
         }
+    }
+    if (action.type === 'REMOVE_FAVS') {
+        return {
+            ...state, favs: state.favs.filter(fav => fav.id !== action.payload.id)
+        };
     }
 }
 
-export function ContextoProvider({ children }){
-    
+export function ContextoProvider({ children }) {
+
     const [estado, dispatch] = useReducer(reducer, initialState);
-    
+
     useEffect(() => {
         axios(api)
-        .then((res) => dispatch({ type: 'DATA', payload: res.data}))
+            .then((res) => dispatch({ type: 'DATA', payload: res.data }))
     }, [])
 
     useEffect(() => {
@@ -44,8 +49,8 @@ export function ContextoProvider({ children }){
 
 
     return (<Contexto.Provider value={{ estado, dispatch }}>
-                {children}
-            </Contexto.Provider>)
+        {children}
+    </Contexto.Provider>)
 }
 
 export const useContexto = () => useContext(Contexto)

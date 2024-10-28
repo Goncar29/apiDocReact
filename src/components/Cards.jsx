@@ -6,8 +6,17 @@ import { useContexto } from './contexto';
 export function Cards({ card }) {
     const { estado, dispatch } = useContexto()
 
-    const addFavs = () => { dispatch({ type: 'FAVS', payload: card }) }
-    const removeFavs = () => { dispatch({ type: 'FAVS', payload: card }) }
+    const isFavorite = estado.favs.some(fav => fav.id === card.id); // Verifica si ya es favorito
+
+    const addFavs = () => {
+        if (!isFavorite) {
+            dispatch({ type: 'FAVS', payload: card });
+        }
+    };
+
+    const removeFavs = () => {
+        dispatch({ type: 'REMOVE_FAVS', payload: card });
+    };
 
     return (
         <>
@@ -18,7 +27,7 @@ export function Cards({ card }) {
                     </Link>
                 </strong>
                 <strong>{card.username}</strong>
-                {estado.favs
+                {!isFavorite
                     ? <button onClick={addFavs}>Agregar a favoritos </button>
                     : <button onClick={removeFavs}>Remover de favoritos </button>}
 
