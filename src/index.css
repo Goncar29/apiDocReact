@@ -62,9 +62,16 @@ footer {
 }
 
 
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0rem;
+    margin: 1rem 0;
+    width: 15rem;
+}
 
 form {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,7 +80,6 @@ form {
 ul {
     display: flex;
     align-items: center;
-    justify-content: center;
     column-gap: 2rem;
 }
 
@@ -107,6 +113,10 @@ ul {
     justify-content: center;
 }
 
+.footer--lista {
+    display: flex;
+    justify-content: center;
+}
 
 form {
     display: flex;
@@ -127,6 +137,8 @@ input {
 input:placeholder-shown {
     padding-left: 1rem;
 }
+
+
 
 @media (prefers-color-scheme: light) {
     :root {

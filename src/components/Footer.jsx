@@ -13,7 +13,7 @@ export function Footer() {
                 <p>
                     Servicios para clientes para contactar médicos de su preferencias.
                 </p>
-                <ul>
+                <ul className='footer--lista'>
                     <li>
                         <a href="/"> About </a>
                     </li>
