@@ -1,0 +1,47 @@
+.error--404 {
+    display: grid;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    place-content: center;
+    height: 100vh;
+}
+
+.error--404-div {
+    text-align: center;
+    color: #000000;
+}
+
+.error--404-titulo {
+    font-size: 8rem;
+    line-height: 1;
+    font-weight: 900;
+    color: #4F46E5;
+}
+
+.error--404-p1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #111827;
+}
+
+.error--404-p2 {
+    margin-top: 1rem;
+    color: #4F46E5;
+}
+
+.error--404-anchor {
+    display: inline-block;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-top: 1.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #4F46E5;
+}

@@ -58,7 +58,7 @@ export function Contact() {
 
 
     return (
-        <section className="Section--Contact" style={{ backgroundColor: estado.tema }}>
+        <section className="Section--Contact" style={{ color: estado.tema }}>
 
             <h1>Contacto</h1>
             <aside className='Asside-Footer'>

@@ -1,4 +1,4 @@
-
+import "../styles/404.css";
 import { useContexto } from './contexto';
 
 export function PageNotFound() {

@@ -8,10 +8,10 @@ section {
 }
 
 .cards {
-    width: 200px;
+    width: 12rem;
     height: 300px;
     display: flex;
-    margin: 20px;
+    margin: 2rem 1rem;
     flex-direction: column;
     gap: 80px;
     border-radius: 10%;

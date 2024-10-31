@@ -3,6 +3,18 @@ footer {
     margin: 0;
 }
 
+.Asside-Footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.footer--lista {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     margin: 0;
 }

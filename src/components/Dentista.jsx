@@ -9,7 +9,7 @@ export function Dentista() {
     const cardId = estado.data.find(card => card.id == id);
     return (
         <section className='card--section' style={{ backgroundColor: estado.tema }}>
-            <ul className='card'>
+            <ul className='card--info'>
                 <li className='card--list' key={cardId.id}>
                     <span>{cardId.name}</span>
                     <span>{cardId.phone}</span>

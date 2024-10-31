@@ -1,3 +1,19 @@
+.Section--Favs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Aside--Favs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
     width: 200px;
     height: 300px;
