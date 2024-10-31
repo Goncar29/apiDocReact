@@ -8,8 +8,8 @@ export function Dentista() {
     const { id } = useParams()
     const cardId = estado.data.find(card => card.id == id);
     return (
-        <section className='card--section' style={{ backgroundColor: estado.tema }}>
-            <ul className='card--info'>
+        <section className='card--section' >
+            <ul className='card--info' style={{ backgroundColor: estado.tema }}>
                 <li className='card--list' key={cardId.id}>
                     <span>{cardId.name}</span>
                     <span>{cardId.phone}</span>
