@@ -4,7 +4,7 @@ import { useContexto } from './contexto';
 import { useEffect, useState } from 'react';
 
 export function Header() {
-    const { dispatch } = useContexto();
+    const { estado, dispatch } = useContexto();
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
@@ -29,12 +29,12 @@ export function Header() {
 
     const routes = [
         { to: '/', text: 'Home' },
-        { to: '/contact', text: 'Contact' },
-        { to: '/favs', text: 'Favs' }
+        { to: '/favs', text: 'Favs' },
+        { to: '/contact', text: 'Contact' }
     ];
 
     return (
-        <nav>
+        <nav style={{ backgroundColor: estado.tema }}>
             <ul>
                 {routes.map(route => (
                     <li key={route.to}>
@@ -49,6 +49,7 @@ export function Header() {
                     </li>
                 ))}
             </ul>
+            <h2 >Servicio Virtual de Médicos</h2>
             <button onClick={toggleTheme} className="buttonHeader">
                 {!isDarkMode ? (
                     <svg
