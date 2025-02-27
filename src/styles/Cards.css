@@ -5,6 +5,7 @@ section {
     justify-content: center;
     align-items: center;
     background-color: darkcyan;
+    height: 100vh;
 }
 
 .cards {

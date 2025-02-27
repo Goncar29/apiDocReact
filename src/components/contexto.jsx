@@ -14,18 +14,18 @@ const initialState = {
 function reducer(state, action) {
     if (action.type === 'CHANGE') {
         return {
-            ...state, tema: action.payload === state.tema ? "lightblue" : "darkblue"
-        }
+            ...state, tema: action.payload
+        };
     }
     if (action.type === 'DATA') {
         return {
             ...state, data: action.payload
-        }
+        };
     }
     if (action.type === 'FAVS') {
         return {
             ...state, favs: [...state.favs, action.payload]
-        }
+        };
     }
     if (action.type === 'REMOVE_FAVS') {
         return {
