@@ -40,7 +40,8 @@ export function Header() {
                     <li key={route.to}>
                         <NavLink
                             style={({ isActive }) => ({
-                                color: isActive ? 'red' : '#747bff',
+                                color: isActive ? 'red' : estado.tema === 'darkblue' ? 'lightblue' : 'darkblue',
+
                             })}
                             to={route.to}
                         >
@@ -49,8 +50,8 @@ export function Header() {
                     </li>
                 ))}
             </ul>
-            <h2 >Servicio Virtual de Médicos</h2>
-            <button onClick={toggleTheme} className="buttonHeader">
+            <h2 style={{ color: estado.tema === 'darkblue' ? 'lightblue' : 'darkblue' }}>Servicio Virtual de Médicos</h2>
+            <button aria-label="buttom dark mode" onClick={toggleTheme} className="buttonHeader">
                 {!isDarkMode ? (
                     <svg
                         className="sun-icon"

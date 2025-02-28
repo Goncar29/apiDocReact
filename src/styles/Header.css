@@ -16,6 +16,11 @@ li {
     display: flex;
 }
 
+h2 {
+    min-width: 710px;
+    color: #747bff;
+}
+
 .buttonHeader {
     margin-right: 2rem;
     display: flex;
@@ -25,9 +30,16 @@ li {
     height: fit-content;
     background: rgb(0, 192, 206);
     border-radius: 50%;
+    border: none;
+    outline: none;
 }
 
 .buttonHeader:hover {
     transition: 1s;
     background: rgb(9, 8, 110);
+    outline: none;
+}
+
+.buttonHeader:focus-visible {
+    outline: none;
 }

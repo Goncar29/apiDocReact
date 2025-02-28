@@ -22,7 +22,7 @@ export function Cards({ card }) {
         <>
             <div className='cards' key={card.id} style={{ backgroundColor: estado.tema }}>
                 <strong>
-                    <Link to={`/dentista/${card.id}`}>
+                    <Link to={`/dentista/${card.id}`} style={{ color: estado.tema === 'darkblue' ? 'lightblue' : 'darkblue' }}>
                         {card.name}
                     </Link>
                 </strong>
