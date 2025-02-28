@@ -7,14 +7,22 @@
     margin: 20px;
     border-radius: 10%;
     padding-left: 0rem;
+    background-color: var(--background-card);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card--info:hover {
+    background-color: var(--card-hover);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 li {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
     align-items: flex-start;
     justify-content: space-evenly;
-    color: rgb(3, 155, 13);
+    color: var(--text-color);
 }

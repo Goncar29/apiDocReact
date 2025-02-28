@@ -1,6 +1,9 @@
 footer {
     background: rgb(40, 40, 139);
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .Asside-Footer {

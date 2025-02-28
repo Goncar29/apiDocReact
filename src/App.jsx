@@ -1,7 +1,6 @@
 import './App.css'
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header'
-// import { Cards } from './components/Cards'
 import { Footer } from './components/Footer'
 import { Contact } from './components/Contact'
 import { Dentista } from './components/Dentista';

@@ -1,25 +1,100 @@
+/* Estilos generales */
 section {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: darkcyan;
+    background-color: #f0f4f8;
     height: 100vh;
+    padding: 2rem;
 }
 
 .cards {
-    width: 12rem;
-    height: 300px;
+    width: 280px;
+    height: 350px;
     display: flex;
-    margin: 2rem 1rem;
     flex-direction: column;
-    gap: 80px;
-    border-radius: 10%;
-    flex-wrap: nowrap;
-    justify-content: center;
+    margin: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header,
+.card-body,
+.card-footer {
+    padding: 1rem;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(18, 14, 61);
-    color: rgb(3, 155, 13);
-    ;
+    border-bottom: 2px solid #ffffff;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-body span {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #ffffff;
+}
+
+/* Botón */
+button {
+    background-color: #ff6347;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+button.active {
+    background-color: #32cd32;
+}
+
+button.active:hover {
+    background-color: #28a745;
+}
+
+/* Modo oscuro y claro */
+body.darkblue .cards {
+    background: linear-gradient(135deg, #333, #555);
+    color: #ddd;
+}
+
+body.lightblue .cards {
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: #000;
 }

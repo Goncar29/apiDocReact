@@ -2,4 +2,42 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  /* Tema Claro */
+  --background-card: #ffffff;
+  --text-color: #333333;
+  --button-color: #4F46E5;
+  --button-hover: #1E90FF;
+  --focus-outline: #ff0000;
+  --card-hover: #f0f0f0;
+  --heading-color: #333333;
+}
+
+/* Tema Oscuro */
+.darkblue {
+  --background-card: #333333;
+  --text-color: #e0e0e0;
+  --button-color: #3CB371;
+  --button-hover: #4F46E5;
+  --focus-outline: #00ff00;
+  --card-hover: #333333;
+  --heading-color: #e0e0e0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
 }

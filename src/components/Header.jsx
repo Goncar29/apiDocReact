@@ -8,29 +8,19 @@ export function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-        const isDark = document.body.classList.contains('darkblue');
+        const isDark = estado.tema === 'darkblue';
         setIsDarkMode(isDark);
-    }, []);
+    }, [estado.tema]);
 
     const toggleTheme = () => {
-        const newMode = !isDarkMode;
-        setIsDarkMode(newMode);
-
-        if (newMode) {
-            document.body.classList.add("darkblue");
-            document.body.classList.remove("lightblue");
-            dispatch({ type: "CHANGE", payload: "darkblue" });
-        } else {
-            document.body.classList.remove("darkblue");
-            document.body.classList.add("lightblue");
-            dispatch({ type: "CHANGE", payload: "lightblue" });
-        }
+        const newMode = estado.tema === 'darkblue' ? 'lightblue' : 'darkblue';
+        dispatch({ type: 'CHANGE', payload: newMode });
     };
 
     const routes = [
-        { to: '/', text: 'Home' },
-        { to: '/favs', text: 'Favs' },
-        { to: '/contact', text: 'Contact' }
+        { to: '/', text: 'Inicio' },
+        { to: '/favs', text: 'Favoritos' },
+        { to: '/contact', text: 'Contacto' }
     ];
 
     return (
@@ -41,7 +31,6 @@ export function Header() {
                         <NavLink
                             style={({ isActive }) => ({
                                 color: isActive ? 'red' : estado.tema === 'darkblue' ? 'lightblue' : 'darkblue',
-
                             })}
                             to={route.to}
                         >

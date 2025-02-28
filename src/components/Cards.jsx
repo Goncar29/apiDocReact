@@ -1,38 +1,38 @@
-import '../styles/Cards.css'
-import { Link } from "react-router-dom";
-import { useContexto } from './contexto';
-
+import '../styles/Cards.css';
+import React from 'react';
+import { useContexto } from './contexto'; // Importar el contexto
 
 export function Cards({ card }) {
-    const { estado, dispatch } = useContexto()
+    const { estado, dispatch } = useContexto();
 
-    const isFavorite = estado.favs.some(fav => fav.id === card.id); // Verifica si ya es favorito
+    const isFavorite = estado.favs.some(fav => fav.id === card.id);
 
-    const addFavs = () => {
-        if (!isFavorite) {
+    const toggleFavorite = () => {
+        if (isFavorite) {
+            dispatch({ type: 'REMOVE_FAVS', payload: card });
+        } else {
             dispatch({ type: 'FAVS', payload: card });
         }
     };
 
-    const removeFavs = () => {
-        dispatch({ type: 'REMOVE_FAVS', payload: card });
-    };
-
     return (
-        <>
-            <div className='cards' key={card.id} style={{ backgroundColor: estado.tema }}>
-                <strong>
-                    <Link to={`/dentista/${card.id}`} style={{ color: estado.tema === 'darkblue' ? 'lightblue' : 'darkblue' }}>
-                        {card.name}
-                    </Link>
-                </strong>
-                <strong>{card.username}</strong>
-                {!isFavorite
-                    ? <button onClick={addFavs}>Agregar a favoritos </button>
-                    : <button onClick={removeFavs}>Remover de favoritos </button>}
-
+        <div className="cards">
+            <div className="card-header">
+                <h3>{card.name}</h3>
             </div>
-        </>
-    )
+            <div className="card-body">
+                <span>Phone: {card.phone}</span>
+                <span>Email: {card.email}</span>
+                <span>Website: {card.website}</span>
+            </div>
+            <div className="card-footer">
+                <button
+                    className={isFavorite ? 'active' : ''}
+                    onClick={toggleFavorite}
+                >
+                    {isFavorite ? 'Quitar de Favoritos' : 'Agregar a Favoritos'}
+                </button>
+            </div>
+        </div>
+    );
 }
-

@@ -58,9 +58,9 @@ export function Contact() {
 
 
     return (
-        <section className="Section--Contact" style={{ color: estado.tema }}>
+        <section className="Section--Contact" style={{ color: estado.tema, backgroundColor: estado.tema === 'darkblue' ? '#191919' : 'white' }}>
 
-            <h1>Contacto</h1>
+            <h1 style={{ color: estado.tema === 'darkblue' ? 'white' : 'darkblue' }}>Contacto</h1>
             <aside className='Asside-Footer'>
                 <form onSubmit={handleSubmit}>
                     <input

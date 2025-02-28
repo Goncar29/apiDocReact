@@ -5,6 +5,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 4rem;
+    height: 100vh;
 }
 
 .Asside-Footer {
@@ -22,4 +23,12 @@ form {
     row-gap: 1rem;
     margin: 2rem 0;
     height: auto;
+}
+
+input {
+    padding-left: 1rem;
+}
+
+p {
+    color: var(--button-hover)
 }

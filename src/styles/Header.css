@@ -1,9 +1,8 @@
 nav {
-    background-color: white;
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: 0.3rem solid rgb(9, 8, 110)
 }
 
@@ -28,18 +27,31 @@ h2 {
     justify-content: center;
     width: 3rem;
     height: fit-content;
-    background: rgb(0, 192, 206);
+    background-color: var(--button-color);
+    color: var(--text-color);
     border-radius: 50%;
     border: none;
     outline: none;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    user-select: none;
 }
 
 .buttonHeader:hover {
-    transition: 1s;
-    background: rgb(9, 8, 110);
-    outline: none;
+    background-color: var(--button-hover);
+    transform: scale(1.05);
 }
 
 .buttonHeader:focus-visible {
+    outline: 2px solid var(--focus-outline);
+}
+
+button:focus {
+    outline: none;
+    outline: none;
+}
+
+button:active {
     outline: none;
 }

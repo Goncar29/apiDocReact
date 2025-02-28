@@ -6,8 +6,8 @@ export function Favs() {
     const { estado } = useContexto()
 
     return (
-        <section className="Section--Favs" style={{ color: estado.tema }}>
-            <h1>Favoritos</h1>
+        <section className="Section--Favs" style={{ color: estado.tema, backgroundColor: estado.tema === 'darkblue' ? '#191919' : 'white' }}>
+            <h1 style={{ color: estado.tema === 'darkblue' ? 'white' : 'darkblue' }}>Favoritos</h1>
             <aside className="Aside--Favs">
                 {estado.favs.map((card) =>
                     <div key={card.id}>

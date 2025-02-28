@@ -29,8 +29,6 @@ html {
     margin: 0;
     padding: 0;
     place-items: center;
-    /* min-width: 320px;
-    min-height: 100vh; */
     width: 100%;
     overflow-x: hidden;
 }
@@ -46,10 +44,10 @@ button {
     font-size: 0.8rem;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    background-color: #464545;
     cursor: pointer;
     transition: border-color 1s;
-    width: 95%;
+    width: 100%;
 }
 
 button:hover {
@@ -80,19 +78,3 @@ input {
 input:placeholder-shown {
     padding-left: 1rem;
 }
-
-/* 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
-    }
-} */

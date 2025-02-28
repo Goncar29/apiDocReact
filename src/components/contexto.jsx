@@ -5,11 +5,14 @@ const api = 'https://jsonplaceholder.typicode.com/users';
 
 export const Contexto = createContext()
 
+const favsFromStorage = localStorage.getItem('favs');
+const initialFavs = favsFromStorage ? JSON.parse(favsFromStorage) : [];
 const initialState = {
     tema: 'lightblue',
     data: [],
-    favs: JSON.parse(localStorage.getItem('favs')) || []
-}
+    favs: initialFavs
+};
+
 
 function reducer(state, action) {
     if (action.type === 'CHANGE') {
