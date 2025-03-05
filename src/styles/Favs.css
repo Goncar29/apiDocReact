@@ -1,8 +1,7 @@
 .Section--Favs {
-    width: 100vw;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
